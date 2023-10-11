@@ -1,0 +1,78 @@
+body {
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+a {
+	padding: 40px 80px;
+	font-family: sans-serif;
+	text-decoration: none;
+	color: #262626;
+	font-size: 45px;
+	letter-spacing: 2px;
+	border: 5px solid #262626;
+	position: relative;
+	transition: 1s;
+}
+
+
+/*
+ we will be adding two css effect in action when hovered.
+So we will use two pseudo effect to take place, :before and :after to handle 
+two horizontal and veritcal hover effects 
+*/
+
+
+/* 1 */
+/* we will be creating an css effect that would
+make the horizontal effect (x-axis) on button */
+a:before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #262626;
+	transition: 1s;
+	transform: rotateX(90deg);
+	z-index: -1;
+}
+
+
+a:hover:before {
+	transform: rotateX(0);
+}
+
+
+
+
+/* 2 */
+/* we will be creating an css effect that would
+make the vertical effect (y-axis) on button */
+
+a:after {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: #262626;
+	transition: 1s;
+	transform: rotateY(90deg);
+	z-index: -1;
+}
+
+a:hover:after {
+	transform: rotateY(0);
+}
+
+
+
+
+a:hover {
+	color: white;
+}
